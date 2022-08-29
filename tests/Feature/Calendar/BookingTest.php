@@ -33,7 +33,7 @@ class BookingTest extends TestCase
      */
     public function test_can_view_calendar_bookings()
     {
-        $response = $this->get('/');
+        $response = $this->get('/bookings');
 
         $response->assertStatus(200);
     }
