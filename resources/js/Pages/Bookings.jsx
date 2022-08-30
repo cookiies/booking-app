@@ -1,12 +1,12 @@
 import React from "react";
 import Authenticated from "@/Layouts/Authenticated";
 import { Head } from "@inertiajs/inertia-react";
-import { Calendar } from '@fullcalendar/core';
-import FullCalendar, { formatDate } from '@fullcalendar/react'
-import dayGridPlugin from '@fullcalendar/daygrid'
-import timeGridPlugin from '@fullcalendar/timegrid'
-import interactionPlugin from '@fullcalendar/interaction'
-import { INITIAL_EVENTS, createEventId } from './event-utils'
+// import { Calendar } from '@fullcalendar/core';
+// import FullCalendar, { formatDate } from '@fullcalendar/react'
+// import dayGridPlugin from '@fullcalendar/daygrid'
+// import timeGridPlugin from '@fullcalendar/timegrid'
+// import interactionPlugin from '@fullcalendar/interaction'
+// import { INITIAL_EVENTS, createEventId } from './event-utils'
 
 export default class DemoApp extends React.Component {
 
@@ -20,7 +20,7 @@ export default class DemoApp extends React.Component {
       <div className='demo-app'>
         {/* {this.renderSidebar()} */}
         <div className='demo-app-main'>
-          <FullCalendar
+          {/* <FullCalendar
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
             headerToolbar={{
               left: 'prev,next today',
@@ -43,7 +43,7 @@ export default class DemoApp extends React.Component {
             eventChange={function(){}}
             eventRemove={function(){}}
             */
-          />
+          /> */}
         </div>
       </div>
     )

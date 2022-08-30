@@ -20,6 +20,8 @@ class EmailVerificationTest extends TestCase
             'email_verified_at' => null,
         ]);
 
+        // Why? https://bytemeta.vip/repo/bmewburn/vscode-intelephense/issues/1875
+        /** @var mixed $user */
         $response = $this->actingAs($user)->get('/verify-email');
 
         $response->assertStatus(200);
@@ -39,6 +41,8 @@ class EmailVerificationTest extends TestCase
             ['id' => $user->id, 'hash' => sha1($user->email)]
         );
 
+        
+        /** @var mixed $user */
         $response = $this->actingAs($user)->get($verificationUrl);
 
         Event::assertDispatched(Verified::class);
@@ -58,6 +62,7 @@ class EmailVerificationTest extends TestCase
             ['id' => $user->id, 'hash' => sha1('wrong-email')]
         );
 
+        /** @var mixed $user */
         $this->actingAs($user)->get($verificationUrl);
 
         $this->assertFalse($user->fresh()->hasVerifiedEmail());

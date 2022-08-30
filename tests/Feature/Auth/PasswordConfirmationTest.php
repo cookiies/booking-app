@@ -14,6 +14,7 @@ class PasswordConfirmationTest extends TestCase
     {
         $user = User::factory()->create();
 
+        /** @var mixed $user */
         $response = $this->actingAs($user)->get('/confirm-password');
 
         $response->assertStatus(200);
@@ -23,6 +24,8 @@ class PasswordConfirmationTest extends TestCase
     {
         $user = User::factory()->create();
 
+        // Why? https://bytemeta.vip/repo/bmewburn/vscode-intelephense/issues/1875
+        /** @var mixed $user */
         $response = $this->actingAs($user)->post('/confirm-password', [
             'password' => 'password',
         ]);
@@ -35,6 +38,7 @@ class PasswordConfirmationTest extends TestCase
     {
         $user = User::factory()->create();
 
+        /** @var mixed $user */
         $response = $this->actingAs($user)->post('/confirm-password', [
             'password' => 'wrong-password',
         ]);
