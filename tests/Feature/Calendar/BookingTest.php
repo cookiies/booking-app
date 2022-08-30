@@ -26,10 +26,10 @@ class BookingTest extends TestCase
 
         $this->user = User::factory()->create();
 
-        $this->seed([
-            UserSeeder::class,
-            CalendarBookingSeeder::class,
-        ]);
+        // $this->seed([
+        //     UserSeeder::class,
+        //     CalendarBookingSeeder::class,
+        // ]);
     }
     
     /**
@@ -55,7 +55,7 @@ class BookingTest extends TestCase
         $response = $this->actingAs($this->user)
                         ->get('/bookings');
         
-        $response->assertOk();
+        $response->assertStatus(200);
     }
     
     /**
