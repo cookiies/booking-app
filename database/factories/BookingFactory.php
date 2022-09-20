@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use App\Models\User;
-use DateTime;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,9 +21,9 @@ class BookingFactory extends Factory
 
         // Faker library doesn't use DateTimeImmutable,
         // using clone to pass by value (instead of by reference)
-        $start_clone = clone $start;
+        $end_clone = clone $start;
 
-        $end = $this->faker->dateTimeBetween($start, $start_clone->modify('+1 hours'));
+        $end = $end_clone->modify('+1 hours');
 
         return [
             'title' => $this->faker->text(20),
